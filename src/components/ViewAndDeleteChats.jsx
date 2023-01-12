@@ -5,8 +5,8 @@ import {chats} from "../apis";
  
 function Message({content, created_at}) {
     return (
-        <VStack w="100%" border={"dotted"} borderWidth="medium" borderColor="gray.200" p="4">
-            <HStack w="100%">
+        <VStack border={"dotted"} borderWidth="medium" borderColor="gray.200" pl="4" pr="8" py="2">
+            <HStack>
                 <FaFacebookMessenger />
                 <Text fontWeight={"bold"}>~anonymous - </Text>
                 <Text fontWeight={"light"} fontSize="xs">{new Date(created_at).toLocaleTimeString()}</Text>
@@ -26,7 +26,7 @@ export default function ViewAndDeleteChats() {
         return <></>
 
     return (
-        <VStack w="100%" alignItems="flex-start" spacing={"8"} h="380px" overflowY={"auto"}>
+        <VStack w="100%" alignItems="flex-start" spacing={"8"} h="400px" overflowY={"auto"}>
             {data.map(message => <span key={message.id}><Message content={message.content} created_at={message.created_at} /></span>)}
         </VStack>
     )

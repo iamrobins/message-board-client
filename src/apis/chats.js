@@ -4,6 +4,8 @@ export async function postMessage(message) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ content: message })
     })
+    if (response.status !== 201)
+        throw Error("Invalid Input");
     const data = await response.json();
     return data;
 }
