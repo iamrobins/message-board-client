@@ -8,7 +8,7 @@ function Message({ name, content, createdAt, id }) {
     const { isOpen, onToggle, onClose } = useDisclosure();
 
     return (
-        <VStack border={"dotted"} borderWidth="medium" borderColor="gray.200" pl="4" pr="8" py="2">
+        <VStack border={"dotted"} borderWidth="medium" borderColor="gray.200" pl="4" pr="8" py="2" w={["320px", "380px", "380px"]}>
             <HStack>
                 <FaFacebookMessenger />
                 <Text fontWeight={"bold"}>~{name} - </Text>
