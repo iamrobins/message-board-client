@@ -1,8 +1,10 @@
-import { FormControl, FormLabel, Input, Button, HStack, useToast } from "@chakra-ui/react"
+import { FormControl, FormLabel, Input, Button, HStack, useToast, useDisclosure } from "@chakra-ui/react"
 import { useState } from "react"
 import { chats } from "../apis"
+import DeleteWithToken from "./DeleteWithToken";
 
 export default function PostAndDeleteChats() {
+    const { isOpen, onToggle, onClose } = useDisclosure();
     const [message, setMessage] = useState("");
     const toast = useToast();
 
@@ -31,10 +33,13 @@ export default function PostAndDeleteChats() {
                 <Button colorScheme='teal' size='xs' px="4" onClick={sendMessage}>
                     Post
                 </Button>
-                <Button colorScheme='red' size='xs' px="4">
+                <Button colorScheme='red' size='xs' px="4" onClick={onToggle}>
                     Delete All
                 </Button>
             </HStack>
+
+            {/* Popup for Deletion */}
+            <DeleteWithToken isOpen={isOpen} onClose={onClose} onToggle={onToggle} id={""}/>
         </FormControl>
     )
 }
