@@ -9,8 +9,6 @@ export async function postMessage(message) {
     })
     if (response.status !== 201)
         throw Error("Invalid Input");
-    const data = await response.json();
-    return data;
 }
 
 export async function getMessages() {
