@@ -9,7 +9,7 @@ function Message({ name, content, createdAt, id }) {
 
     return (
         <VStack border={"dotted"} borderWidth="medium" borderColor="gray.200" pl="4" pr="8" py="2" w={["320px", "380px", "380px"]}>
-            <HStack>
+            <HStack w="100%">
                 <FaFacebookMessenger />
                 <Text fontWeight={"bold"}>~{name} - </Text>
                 <Text fontWeight={"light"} fontSize="xs">{new Date(createdAt).toLocaleTimeString()}</Text>
