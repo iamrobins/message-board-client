@@ -1,17 +1,12 @@
 import React from 'react';
 import {
   ChakraProvider,
-  Box,
-  Text,
-  Link,
   VStack,
-  Code,
   Flex,
   theme,
   Heading,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
 import PostAndDeleteChats from './components/PostAndDeleteChats';
 import ViewAndDeleteChats from './components/ViewAndDeleteChats';
 
