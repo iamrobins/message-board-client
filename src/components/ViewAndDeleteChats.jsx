@@ -4,14 +4,14 @@ import { useQuery } from "react-query";
 import { chats } from "../apis";
 import DeleteWithToken from "./DeleteWithToken";
 
-function Message({ content, createdAt, id }) {
+function Message({ name, content, createdAt, id }) {
     const { isOpen, onToggle, onClose } = useDisclosure();
 
     return (
         <VStack border={"dotted"} borderWidth="medium" borderColor="gray.200" pl="4" pr="8" py="2">
             <HStack>
                 <FaFacebookMessenger />
-                <Text fontWeight={"bold"}>~anonymous - </Text>
+                <Text fontWeight={"bold"}>~{name} - </Text>
                 <Text fontWeight={"light"} fontSize="xs">{new Date(createdAt).toLocaleTimeString()}</Text>
                 <Link fontSize={"sm"} color="blue.600" onClick={onToggle}>Delete</Link>
             </HStack>
@@ -35,7 +35,7 @@ export default function ViewAndDeleteChats() {
         <VStack w="100%" alignItems="flex-start" spacing={"8"} h="400px" overflowY={"auto"}>
             {data.map(message => 
                 <span key={message.id}>
-                    <Message content={message.content} createdAt={message.created_at} id={message.id} />
+                    <Message name={message.name} content={message.content} createdAt={message.created_at} id={message.id} />
                 </span>)}
         </VStack>
     )
