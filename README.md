@@ -13,3 +13,9 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6ImFkbWluIiwiZXhwIjoxNjc2MTIyNjk
 ```txt
 http://localhost:8000/api/v1/admin-access
 ```
+
+## Light
+<img src="https://i.postimg.cc/66VrLqYJ/message-board-white.png" alt="light">
+
+## Dark
+<img src="https://i.postimg.cc/2yY4NNjK/message-board-black.png" alt="dark">
